@@ -1,8 +1,5 @@
 name: Jekyll site CI
 
-- name: Setup Alpine Linux environment
-  uses: jirutka/setup-alpine@v1.2.0
-
 on:
   push:
     branches: [ main ]
@@ -16,6 +13,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    
+    - name: Setup Alpine Linux environment
+      uses: jirutka/setup-alpine@v1.2.0
+  
     - name: Build the site in the jekyll/builder container
       run: |
         docker run \
