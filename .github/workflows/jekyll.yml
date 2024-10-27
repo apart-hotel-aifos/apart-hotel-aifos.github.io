@@ -14,13 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
-    - name: Setup Alpine Linux environment
-      uses: jirutka/setup-alpine@v1.2.0
-      
-    - name: Update Alpine Linux
-      run: |
-        apk update
-        apk upgrade
+    - name: Build Jekyll for GitHub Pages
+      uses: actions/jekyll-build-pages@v1.0.13
   
     - name: Build the site in the jekyll/builder container
       run: |
