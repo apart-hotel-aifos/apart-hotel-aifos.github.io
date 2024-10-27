@@ -1,5 +1,8 @@
 name: Jekyll site CI
 
+- name: Setup Alpine Linux environment
+  uses: jirutka/setup-alpine@v1.2.0
+
 on:
   push:
     branches: [ main ]
