@@ -21,7 +21,9 @@ jobs:
     - name: Push the site to the gh-pages branch
       if: ${{ github.event_name == 'push' }}
       run: |
-        sudo chown $( whoami ):$( whoami ) ${{ github.workspace }}
+        sudo touch Gemfile.lock
+        sudo chmod a+w Gemfile.lock
+        sudo chown $( whoami ):$( whoami ) ${{ github.workspace }}/_site
         cd ${{ github.workspace }}/_site
         git init -b gh-pages
         git config user.name ${{ github.actor }}
