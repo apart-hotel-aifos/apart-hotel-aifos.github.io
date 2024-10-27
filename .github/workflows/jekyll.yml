@@ -16,6 +16,8 @@ jobs:
     
     - name: Setup Alpine Linux environment
       uses: jirutka/setup-alpine@v1.2.0
+      
+    - name: Update Alpine Linux
       run: |
         apk update
         apk upgrade
@@ -25,6 +27,7 @@ jobs:
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"        
+    
     - name: Push the site to the gh-pages branch
       if: ${{ github.event_name == 'push' }}
       run: |
