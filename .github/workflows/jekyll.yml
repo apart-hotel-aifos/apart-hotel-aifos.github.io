@@ -16,6 +16,9 @@ jobs:
     
     - name: Setup Alpine Linux environment
       uses: jirutka/setup-alpine@v1.2.0
+      run: |
+        apk update
+        apk upgrade
   
     - name: Build the site in the jekyll/builder container
       run: |
