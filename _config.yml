@@ -1,0 +1,18 @@
+# Site settings
+title: Apart-Hotel AIFOS
+email: hotel.aifos@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "" # the base hostname & protocol for your site
+
+twitter_username:
+github_username:
+whatsapp_number: +595 982 686006
+
+# Build settings
+markdown: kramdown
+
+plugins:
+  - jekyll-maps
+
+
