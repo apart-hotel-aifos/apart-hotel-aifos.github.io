@@ -18,3 +18,5 @@ plugins:
 maps:
   google:
     api_key: AIzaSyDPTZ-pKqUOrhJ_cDsW9b0ePx08d_eaeHQ
+    
+google_analytics: G-0B9P1JLRGK
