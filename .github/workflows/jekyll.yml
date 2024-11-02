@@ -43,12 +43,15 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
       - name: Setup Github Secrets variables
-        with:
+        env:
             google_maps_api: ${{ secrets.API_GOOGLE_MAPS }}
             google_analytics: ${{ secrets.GOOGLE_ANALYTICS_KEY }}
         run: |
-            echo -e "maps:\n\tgoogle:\n\t\tapi_key: $google_maps_api" >> _config.yml
-            echo -e "google_analytics: $google_analytics" >> _config.yml
+            echo "maps:" >> _config.yml
+            echo "   google:" >> _config.yml
+            echo "      api_key: $google_maps_api" >> _config.yml
+            echo >> _config.yml
+            echo "google_analytics: $google_analytics" >> _config.yml
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
